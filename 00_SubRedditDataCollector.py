@@ -3,6 +3,11 @@ from datetime import datetime, timedelta
 import os
 import json
 import time
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 
 # To use this script, you need to set up the Reddit API:
 # 1. Create a Reddit account if you don’t already have one.
@@ -18,11 +23,11 @@ import time
 
 # Reddit API configuration
 reddit = praw.Reddit(
-    client_id="changeme",
-    client_secret="changeme",
+    client_id=os.getenv('REDDIT_CLIENT_ID'),
+    client_secret=os.getenv('REDDIT_CLIENT_SECRET'),
     user_agent="local research script",
-    username="changeme",
-    password="changeme"
+    username=os.getenv('REDDIT_USERNAME'),
+    password=os.getenv('REDDIT_PASSWORD')
 )
 
 
