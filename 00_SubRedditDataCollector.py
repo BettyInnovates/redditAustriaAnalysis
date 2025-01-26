@@ -17,9 +17,9 @@ load_dotenv()
 #    - Name: Give your project a name (e.g., "MyResearchApp").
 #    - App type: Select "script."
 #    - Redirect URI: Enter "http://localhost:8080."
-#    - Save the app.
-# 5. Copy the "client_id" (located directly under the app name) and "client_secret" (next to "secret").
-# 6. Paste the values for client_id, client_secret, username, and password into the configuration.
+#    - Save the app
+# 5. Create a file ".env" with variables shown in .env-template
+# 6. Paste the values for client_id, client_secret, username, and password into the environment file.
 
 # Reddit API configuration
 reddit = praw.Reddit(

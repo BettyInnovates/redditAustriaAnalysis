@@ -17,10 +17,10 @@ This script is the foundation for all further analysis of subreddit data. It all
     1. Create a Reddit account if you don’t already have one.
     2. Visit [Reddit's App Preferences](https://www.reddit.com/prefs/apps) and create a new app.
     3. Select "script" as the app type.
-    4. Add the credentials to the script.
+    4. Add the credentials to the script. (see inline comments)
 
 ## Usage
-1. Update the script with your Reddit API credentials.
+1. Update the script with your Reddit API credentials. (see inline comments)
 2. Define the subreddit name and the start/end date (the script automatically fetches starting from today).
 3. Run the script to fetch data. All collected data will be saved in the `data` directory as JSON files.
 
