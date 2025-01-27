@@ -1,6 +1,6 @@
 # What Moves r/Austria?
 
-This project was developed as part of the course **Foundations of Computational Science** at the Graz University of Technology. Our goal was to explore various methods for analyzing trends, topics, and political discussions that shape engagement within Austria's largest Reddit community.
+This project was developed as part of the course **Foundations of Computational Social Systems** at the Graz University of Technology. Our goal was to explore various methods for analyzing trends, topics, and political discussions that shape engagement within Austria's largest Reddit community.
 
 While this project provides several approaches and insights, we do not claim to offer a comprehensive analysis. These are exploratory methods that demonstrate the potential of data-driven techniques, leaving room for further extensions and improvements.
 
