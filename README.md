@@ -1,6 +1,11 @@
 # What Moves r/Austria?
 
-TBA
+This project was developed as part of the course **Foundations of Computational Science** at the Graz University of Technology. Our goal was to explore various methods for analyzing trends, topics, and political discussions that shape engagement within Austria's largest Reddit community.
+
+While this project provides several approaches and insights, we do not claim to offer a comprehensive analysis. These are exploratory methods that demonstrate the potential of data-driven techniques, leaving room for further extensions and improvements.
+
+Below, you'll find explanations of the scripts and their respective purposes within the analysis pipeline.
+
 
 # SubReddit Data Collector
 
@@ -155,3 +160,36 @@ A **word cloud** visualizes the most frequently occurring words by displaying th
   - Falls back to a square word cloud if no mask is provided.
 
 > **Note**: Ensure the `data` directory contains JSON files cleaned by the **01_SubRedditTextCleaner.py** script. Run the cleaner once before using **SubRedditWordCloud.py**.  
+
+# SubReddit Topic Modelling
+
+This script performs topic modeling on a collection of subreddit texts using Latent Dirichlet Allocation (LDA) and calculates the coherence score to evaluate the quality of the generated topics. Results, including topics and coherence scores, are saved in JSON format.
+
+## Features
+- **Text Preprocessing**: Combines titles, selftext, and comments into a unified text corpus.
+- **Topic Modeling**: Uses `CountVectorizer` and `LatentDirichletAllocation` from `sklearn` to generate topics.
+- **Coherence Scoring**: Evaluates the quality of topics using Gensim's `CoherenceModel`.
+- **Result Saving**: Saves the extracted topics as a JSON file for further analysis.
+
+> **Note**: Ensure you have run both the **SubReddit Data Collector** to gather the initial dataset and the **SubReddit Text Cleaner** to preprocess the data before using this script. Without these steps, the required input files will not be available.
+
+# SubReddit Sentiment Analyzer
+
+This script analyzes the sentiment of subreddit posts and their comments. It calculates sentiment values using a multilingual BERT model and generates visualizations of the sentiment distribution.
+
+## Features
+- **Sentiment Analysis**:
+  - Analyzes preprocessed post titles (`cleaned_title`) and texts (`cleaned_selftext`).
+  - Analyzes comment texts (`cleaned_body`) for sentiment.
+  - Uses the `nlptown/bert-base-multilingual-uncased-sentiment` model.
+
+- **Visualization**:
+  - Generates high-resolution bar charts of sentiment distribution.
+  - Two visualization styles: emphasize maximum category (`highlight_max`) or use uniform colors.
+
+- **Results**:
+  - Outputs a JSON file with analyzed sentiments.
+  - Saves visualizations in the `results/plots/` directory.
+
+> **Note**: Preprocessed JSON from the **SubReddit Text Cleaner** script as input file required
+
