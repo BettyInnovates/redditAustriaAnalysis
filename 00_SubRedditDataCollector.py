@@ -3,6 +3,11 @@ from datetime import datetime, timedelta
 import os
 import json
 import time
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 
 # To use this script, you need to set up the Reddit API:
 # 1. Create a Reddit account if you don’t already have one.
@@ -12,17 +17,17 @@ import time
 #    - Name: Give your project a name (e.g., "MyResearchApp").
 #    - App type: Select "script."
 #    - Redirect URI: Enter "http://localhost:8080."
-#    - Save the app.
-# 5. Copy the "client_id" (located directly under the app name) and "client_secret" (next to "secret").
-# 6. Paste the values for client_id, client_secret, username, and password into the configuration.
+#    - Save the app
+# 5. Create a file ".env" with variables shown in .env-template
+# 6. Paste the values for client_id, client_secret, username, and password into the environment file.
 
 # Reddit API configuration
 reddit = praw.Reddit(
-    client_id="ftlvY4bdQj1iOGDHJYxZZQ",
-    client_secret="etOzH3b1YpK-kUH0JmA-C9_39gdDTA",
+    client_id=os.getenv('REDDIT_CLIENT_ID'),
+    client_secret=os.getenv('REDDIT_CLIENT_SECRET'),
     user_agent="local research script",
-    username="DeviceTall9736",
-    password="1#21Knurpsi1"
+    username=os.getenv('REDDIT_USERNAME'),
+    password=os.getenv('REDDIT_PASSWORD')
 )
 
 
